@@ -81,11 +81,14 @@ class HTTPCollector:
                     async with self._session.get(source.url) as resp:
                         body = await resp.read()
                         # Retry on transient server errors
-                        if 500 <= resp.status < 600 and attempt < max_attempts:
+                        if 500 <= resp.status < 600:
                             last_exc = CollectorError(
                                 f"HTTP {resp.status} from {source.url} (attempt {attempt})")
-                            await self._sleep_backoff(attempt)
-                            continue
+                            if attempt < max_attempts:
+                                await self._sleep_backoff(attempt)
+                                continue
+                            # Final attempt also 5xx -- give up.
+                            break
                         return FetchResult(
                             source=source.name, url=source.url,
                             status=resp.status, body=body, attempt=attempt,

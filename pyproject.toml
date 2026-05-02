@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osint-pipeline-demo"
+version = "1.0.0"
+description = "An async Python reference pipeline for high-throughput public-source OSINT data collection."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Ali Murtaza Bhutto", email = "alibhutto101112@gmail.com"},
+]
+keywords = [
+    "OSINT",
+    "data pipeline",
+    "asyncio",
+    "aiohttp",
+    "PostgreSQL",
+    "Selenium",
+    "concurrency",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Framework :: AsyncIO",
+]
+dependencies = [
+    "aiohttp>=3.13",
+    "asyncpg>=0.31",
+    "pyyaml>=6.0",
+    "pydantic>=2.10",
+    "pydantic-settings>=2.7",
+]
+
+[project.optional-dependencies]
+selenium = [
+    "selenium>=4.43",
+    "webdriver-manager>=4.0",
+]
+dev = [
+    "pytest>=9.0",
+    "pytest-asyncio>=1.3",
+    "aioresponses>=0.7",
+]
+
+[project.scripts]
+osint-pipeline = "src.cli:main"
+
+[project.urls]
+Repository = "https://github.com/thunderstornX/osint-pipeline-demo"
+Issues = "https://github.com/thunderstornX/osint-pipeline-demo/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+asyncio_mode = "auto"

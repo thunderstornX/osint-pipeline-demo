@@ -108,7 +108,8 @@ class HTTPCollector:
         """Exponential backoff with jitter: base * 2**(attempt-1) +/- 25%."""
         base = self._settings.retry_base_delay_seconds
         delay = base * (2 ** (attempt - 1))
-        jitter = delay * random.uniform(-0.25, 0.25)
+        # B311: jitter is for traffic-shaping, not cryptographic. random.uniform is correct here.
+        jitter = delay * random.uniform(-0.25, 0.25)  # nosec B311
         await asyncio.sleep(max(0.0, delay + jitter))
 
     async def fetch_all(self, sources: list[SourceConfig]) -> AsyncIterator[FetchResult]:

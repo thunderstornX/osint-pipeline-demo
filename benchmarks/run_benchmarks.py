@@ -99,7 +99,10 @@ def _sync_baseline(url: str, count: int) -> tuple[int, int]:
     success = failures = 0
     for _ in range(count):
         try:
-            with urllib.request.urlopen(url, timeout=10) as resp:
+            # B310: url is constructed from the local mock server only
+            # (http://127.0.0.1:18080/), never user input. Safe in this
+            # benchmark-only context.
+            with urllib.request.urlopen(url, timeout=10) as resp:  # nosec B310
                 resp.read()
                 if 200 <= resp.status < 300:
                     success += 1

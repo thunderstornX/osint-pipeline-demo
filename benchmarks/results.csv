@@ -1,0 +1,5 @@
+strategy,requests,workers,wall_seconds,requests_per_second,peak_rss_kb,failures
+sync_baseline,100,1,5.1391,19.46,33588,0
+async_5,100,5,1.0429,95.89,34100,0
+async_10,100,10,0.5371,186.17,34356,0
+async_20,100,20,0.2848,351.11,34612,0

@@ -1,0 +1,55 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+.coverage
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+.venv/
+venv/
+env/
+ENV/
+
+.env
+.env.*
+!.env.example
+
+dist/
+build/
+*.egg
+
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Pipeline runtime artefacts
+data/
+logs/
+*.log
+.scan-reports/
+
+# PostgreSQL data volume (when running docker-compose up locally)
+postgres-data/
+
+# Selenium cache
+.wdm/
+
+# LaTeX build artefacts (we DO commit IEEEtran.cls and the compiled PDF)
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.bbl
+paper/*.blg
+paper/*.synctex.gz
+paper/*.fdb_latexmk
+paper/*.fls
+
+# Benchmarks raw output is kept; do not gitignore benchmarks/results.csv
+benchmarks/.cache/

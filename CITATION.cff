@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+title: "OSINT Pipeline Demo: An Async Python Reference Pipeline for High-Throughput Public-Source Data Collection"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: Ali Murtaza
+    family-names: Bhutto
+    orcid: "https://orcid.org/0009-0007-2787-943X"
+    affiliation: "Shaheed Zulfikar Ali Bhutto Institute of Science and Technology (SZABIST)"
+    email: alibhutto101112@gmail.com
+doi: "10.5281/zenodo.XXXXXXX"
+url: "https://github.com/thunderstornX/osint-pipeline-demo"
+repository-code: "https://github.com/thunderstornX/osint-pipeline-demo"
+license: MIT
+version: "1.0.0"
+date-released: "2026-05-02"
+keywords:
+  - OSINT
+  - data pipeline
+  - Python
+  - asyncio
+  - aiohttp
+  - PostgreSQL
+  - Docker
+  - Selenium
+  - cybersecurity
+references:
+  - type: report
+    authors:
+      - family-names: Bhutto
+        given-names: Ali Murtaza
+    title: "Legal and Ethical Framework for OSINT Investigations"
+    doi: "10.5281/zenodo.16924934"
+abstract: >-
+  A reference asynchronous data-collection pipeline for OSINT use cases. Demonstrates
+  aiohttp connection pooling, content-addressed deduplication via SHA-256, batched
+  PostgreSQL writes with ON CONFLICT DO NOTHING, token-bucket rate limiting per
+  source, and an optional Selenium WebDriver pool for JavaScript-rendered targets.
+  Includes reproducible benchmarks measuring throughput improvements between sync
+  and async strategies on three publicly-accessible APIs (NIST NVD, GitHub Events,
+  OpenCorporates).

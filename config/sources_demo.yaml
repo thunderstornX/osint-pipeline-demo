@@ -1,0 +1,12 @@
+# Single-source variant for the README/paper demo screenshot.
+# Hits only the NVD CVE API which is fast and unauthenticated.
+sources:
+  - name: nvd_recent_cves
+    url: "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=20"
+    rate_limit_per_second: 0.15
+    use_selenium: false
+    extractors:
+      - name: cve_id
+        regex: '"id":"(CVE-\d{4}-\d{4,7})"'
+      - name: published
+        regex: '"published":"([^"]+)"'

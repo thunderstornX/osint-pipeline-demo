@@ -1,0 +1,17 @@
+[sync_baseline]  count=100 latency=50.0ms ...
+[async_5] count=100 workers=5 ...
+[async_10] count=100 workers=10 ...
+[async_20] count=100 workers=20 ...
+
+strategy          requests  workers    wall_s    req/s    RSS_kb  failed
+----------------------------------------------------------------------------
+[0;32msync_baseline[0m          100        1      5.14    19.46     33588       0
+[0;36masync_5[0m                100        5      1.04    95.89     34100       0
+[0;36masync_10[0m               100       10      0.54   186.17     34356       0
+[0;36masync_20[0m               100       20      0.28   351.11     34612       0
+
+  Fastest async strategy: [1masync_20[0m @ 351.1 req/s
+  Sync baseline:          19.46 req/s
+  Measured speedup:       [0;32m[1m18.04x[0m
+
+Results written to benchmarks/results.csv

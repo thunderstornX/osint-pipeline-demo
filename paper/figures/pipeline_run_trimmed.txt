@@ -1,0 +1,11 @@
+[1m# First run -- 20 CVEs fetched and inserted[0m
+{"ts":"2026-05-02T15:20:30","level":"[0;32mINFO[0m","logger":"osint_pipeline",
+ "msg":"fetch ok source=nvd_recent_cves status=200 bytes=42875 attempt=1"}
+{"ts":"2026-05-02T15:20:30","level":"[0;32mINFO[0m","logger":"osint_pipeline",
+ "msg":"pipeline done duration=0.97s ok=1/1 records=20 [0;32minserted=20[0m dup=0"}
+
+[1m# Second run -- same 20 CVEs, all deduplicated[0m
+{"ts":"2026-05-02T15:20:43","level":"[0;32mINFO[0m","logger":"osint_pipeline",
+ "msg":"fetch ok source=nvd_recent_cves status=200 bytes=42875 attempt=1"}
+{"ts":"2026-05-02T15:20:43","level":"[0;32mINFO[0m","logger":"osint_pipeline",
+ "msg":"pipeline done duration=1.15s ok=1/1 records=20 inserted=0 [0;33mdup=20[0m"}

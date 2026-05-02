@@ -1,0 +1,12 @@
+# Optional override file. Pipeline tunables can also be set via env vars
+# (PIPELINE_WORKERS=20, PIPELINE_BATCH_SIZE=1000, etc.) -- env wins.
+#
+# Copy this file to .env or export the variables directly.
+
+PIPELINE_WORKERS=10
+PIPELINE_SELENIUM_DRIVERS=3
+PIPELINE_BATCH_SIZE=500
+PIPELINE_RETRY_MAX_ATTEMPTS=3
+PIPELINE_RETRY_BASE_DELAY_SECONDS=0.5
+PIPELINE_REQUEST_TIMEOUT_SECONDS=20.0
+PIPELINE_DATABASE_URL=postgresql://osint:osint@localhost:5432/osint

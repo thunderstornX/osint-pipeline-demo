@@ -1,0 +1,50 @@
+# Public OSINT data sources used by the demo pipeline.
+#
+# Each source has a per-second rate limit (token-bucket). The defaults are
+# conservative and respect each provider's documented unauthenticated tier:
+#
+#   * NIST NVD: 5 requests per 30 seconds without an API key (we use 0.15/s).
+#   * GitHub Events: 60 requests per hour unauthenticated (we use 0.015/s).
+#   * OpenCorporates: documented in their public ToS, conservative default.
+#
+# Selenium-backed sources can opt in via `use_selenium: true`. None of the
+# default sources need it -- all three return JSON over plain HTTP -- but
+# the field is wired so users can add JS-rendered targets without touching
+# the orchestrator.
+#
+# Extractors are NAMED REGEXES applied to the raw response body. The
+# normaliser zips them by index into rows; e.g. if `cve_id` matches 5 times
+# and `severity` matches 5 times, we get 5 records with both fields.
+
+sources:
+  - name: nvd_recent_cves
+    url: "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=20"
+    rate_limit_per_second: 0.15
+    use_selenium: false
+    extractors:
+      - name: cve_id
+        regex: '"id":"(CVE-\d{4}-\d{4,7})"'
+      - name: published
+        regex: '"published":"([^"]+)"'
+
+  - name: github_public_events
+    url: "https://api.github.com/events?per_page=20"
+    rate_limit_per_second: 0.015
+    use_selenium: false
+    extractors:
+      - name: event_id
+        regex: '"id":"(\d{8,})"'
+      - name: event_type
+        regex: '"type":"([A-Za-z]+Event)"'
+      - name: repo
+        regex: '"repo":\{"id":\d+,"name":"([^"]+)"'
+
+  - name: opencorporates_recent
+    url: "https://api.opencorporates.com/v0.4/companies/search?q=software&per_page=10"
+    rate_limit_per_second: 0.5
+    use_selenium: false
+    extractors:
+      - name: company_name
+        regex: '"name":"([^"]+)"'
+      - name: jurisdiction
+        regex: '"jurisdiction_code":"([a-z_]+)"'

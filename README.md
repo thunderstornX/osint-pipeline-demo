@@ -1,6 +1,6 @@
 # osint-pipeline-demo
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) <!-- DOI placeholder; replaced on first Zenodo deposit -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20480442.svg)](https://doi.org/10.5281/zenodo.20480442) <!-- DOI placeholder; replaced on first Zenodo deposit -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An asynchronous Python reference pipeline for high-throughput OSINT data
@@ -165,13 +165,13 @@ access.
   author    = {Bhutto, Ali Murtaza},
   title     = {osint-pipeline-demo},
   year      = {2026},
-  doi       = {10.5281/zenodo.XXXXXXX},
+  doi       = {10.5281/zenodo.20480442},
   url       = {https://github.com/thunderstornX/osint-pipeline-demo},
   orcid     = {0009-0007-2787-943X}
 }
 ```
 
-> **Note:** The DOI placeholder `XXXXXXX` is replaced on first Zenodo deposit.
+> **Note:** The DOI placeholder `20480442` is replaced on first Zenodo deposit.
 
 Related research:
 - [Legal and Ethical Framework for OSINT Investigations](https://doi.org/10.5281/zenodo.16924934)

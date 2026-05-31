@@ -8,12 +8,19 @@ authors:
     orcid: "https://orcid.org/0009-0007-2787-943X"
     affiliation: "Shaheed Zulfikar Ali Bhutto Institute of Science and Technology (SZABIST)"
     email: alibhutto101112@gmail.com
-doi: "10.5281/zenodo.XXXXXXX"
+doi: "10.5281/zenodo.20480443"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20480442"
+    description: "Concept DOI (always resolves to the latest version)"
+  - type: doi
+    value: "10.5281/zenodo.20480443"
+    description: "Version DOI"
 url: "https://github.com/thunderstornX/osint-pipeline-demo"
 repository-code: "https://github.com/thunderstornX/osint-pipeline-demo"
 license: MIT
 version: "1.0.0"
-date-released: "2026-05-02"
+date-released: "2026-06-01"
 keywords:
   - OSINT
   - data pipeline

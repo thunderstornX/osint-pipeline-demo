@@ -1,6 +1,6 @@
 # osint-pipeline-demo
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20480442.svg)](https://doi.org/10.5281/zenodo.20480442) <!-- DOI placeholder; replaced on first Zenodo deposit -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20480442.svg)](https://doi.org/10.5281/zenodo.20480442)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An asynchronous Python reference pipeline for high-throughput OSINT data
@@ -171,8 +171,7 @@ access.
 }
 ```
 
-> **Note:** The DOI placeholder `20480442` is replaced on first Zenodo deposit.
-
+> The DOI above is the **concept DOI** — it always resolves to the latest release. Version 1.0.0 is archived at [10.5281/zenodo.20480443](https://doi.org/10.5281/zenodo.20480443).
 Related research:
 - [Legal and Ethical Framework for OSINT Investigations](https://doi.org/10.5281/zenodo.16924934)
 - [OSINT Tools Framework](https://doi.org/10.5281/zenodo.16921792)

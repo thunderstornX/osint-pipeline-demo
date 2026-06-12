@@ -1,6 +1,7 @@
 # osint-pipeline-demo
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20480442.svg)](https://doi.org/10.5281/zenodo.20480442)
+[![tests](https://github.com/thunderstornX/osint-pipeline-demo/actions/workflows/tests.yml/badge.svg)](https://github.com/thunderstornX/osint-pipeline-demo/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An asynchronous Python reference pipeline for high-throughput OSINT data
